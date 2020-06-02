@@ -5,3 +5,12 @@ services:
 script:
   - docker build -t vignesh5698/travis .
   - docker images vignesh5698/travis
+
+before_deploy:
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+  
+deploy:
+  provider: script
+  script: docker push vignesh5698/travis
+  on:
+    branch: master 
