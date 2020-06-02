@@ -4,4 +4,4 @@ services:
 
 script:
   - docker build -t vignesh5698/travis .
-  # - docker images vignesh5698/travis
+  - docker images vignesh5698/travis
